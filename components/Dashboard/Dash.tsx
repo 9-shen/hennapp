@@ -7,7 +7,7 @@ import UserPhoto from "@/public/Profile/2.jpg";
 // Icons
 import { RiAccountCircleLine, RiLockPasswordLine } from "react-icons/ri";
 import { GiBigDiamondRing } from "react-icons/gi";
-import { MdOutlineNotificationsActive, MdLogout } from "react-icons/md";
+import { MdOutlineNotificationsActive, MdLogout, MdOutlineSettingsSuggest  } from "react-icons/md";
 import { CiCreditCard1 } from "react-icons/ci";
 
 // Lazy-load components
@@ -18,10 +18,12 @@ const Notifications = lazy(
 );
 const Services = lazy(() => import("@/components/Dashboard/Items/Services"));
 const Billing = lazy(() => import("@/components/Dashboard/Items/Billing"));
+const UserProfile = lazy(() => import("@/components/Dashboard/Items/UserProfile"));
 
 // Define the available component keys as a union type
 type ComponentName =
   | "Account"
+  | "UserProfile"
   | "Password"
   | "Notifications"
   | "Services"
@@ -34,6 +36,7 @@ export default function Dash() {
   // Components map for easier dynamic rendering
   const componentsMap: Record<ComponentName, JSX.Element> = {
     Account: <Account />,
+    UserProfile: <UserProfile />,
     Password: <Password />,
     Notifications: <Notifications />,
     Services: <Services />,
@@ -101,8 +104,15 @@ export default function Dash() {
                         className="inline-flex gap-2 items-center cursor-pointer mb-2 bg-slate-100 px-2 py-2 hover:bg-teal-100"
                         onClick={() => setSelectedComponent("Account")}
                       >
-                        <RiAccountCircleLine className="text-pink-500" />{" "}
+                        <MdOutlineSettingsSuggest className="text-pink-500" />{" "}
                         Account
+                      </li>
+                      <li
+                        className="inline-flex gap-2 items-center cursor-pointer mb-2 bg-slate-100 px-2 py-2 hover:bg-teal-100"
+                        onClick={() => setSelectedComponent("UserProfile")}
+                      >
+                        <RiAccountCircleLine className="text-pink-500" />{" "}
+                        Profile
                       </li>
                       <li
                         className="inline-flex gap-2 items-center cursor-pointer mb-2 bg-slate-100 px-2 py-2 hover:bg-teal-100"
