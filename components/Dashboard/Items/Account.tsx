@@ -388,7 +388,7 @@ export default function Account() {
                     className="border-b-2 border-gray-400 flex-1 py-2 placeholder-gray-300 outline-none focus:border-teal-500"
                   />
                 </div>
-                {/* Company Patente */}
+                {/* Company Patent */}
                 <div className="flex items-center mb-10">
                   <label
                     htmlFor="patent"
