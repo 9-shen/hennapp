@@ -141,7 +141,7 @@ export default function Supplier() {
     <div>
       {/* Hero Section */}
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-10 pb-10 text-center lg:pt-10 bg-gradient-to-r from-blue-200 to-cyan-200">
-        <p className="mx-auto -mt-4 max-w-2xl text-lg tracking-tight text-slate-700 sm:mt-6">
+        <p className="mx-auto -mt-4 max-w-2xl text-sm md:text-lg tracking-tight text-slate-700 sm:mt-6">
           Discover High-Quality Henna and Trusted
           <span className="border-b border-dotted border-slate-300">
             {" "}

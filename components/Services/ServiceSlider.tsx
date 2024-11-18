@@ -49,8 +49,8 @@ export default function App() {
           
           {/* Title and Caption with Animation */}
           <div className="absolute inset-0 bg-black bg-opacity-40 flex flex-col items-center justify-center text-center p-4">
-            <h2 className="text-white text-3xl font-bold animate-fade-in-down">{slide.title}</h2>
-            <p className="text-white text-lg mt-2 animate-fade-in-up">{slide.caption}</p>
+            <h2 className="text-white text-xl md:text-3xl font-bold animate-fade-in-down">{slide.title}</h2>
+            <p className="text-white text-md md:text-lg mt-2 animate-fade-in-up">{slide.caption}</p>
           </div>
         </SwiperSlide>
       ))}
