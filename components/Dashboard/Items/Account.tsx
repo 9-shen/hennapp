@@ -56,7 +56,7 @@ export default function Account() {
     { name: "Tangier" },
     { name: "Casablanca" },
     { name: "Rabat" },
-    { name: "Tangier" },
+    { name: "Asilah" },
     { name: "Marrakech" },
   ];
 
@@ -129,7 +129,7 @@ export default function Account() {
                 Email
               </label>
               <input
-                type="text"
+                type="email"
                 name="email"
                 id="email"
                 placeholder="Email@example.com"

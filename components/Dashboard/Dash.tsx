@@ -7,8 +7,13 @@ import UserPhoto from "@/public/Profile/2.jpg";
 // Icons
 import { RiAccountCircleLine, RiLockPasswordLine } from "react-icons/ri";
 import { GiBigDiamondRing } from "react-icons/gi";
-import { MdOutlineNotificationsActive, MdLogout, MdOutlineSettingsSuggest  } from "react-icons/md";
+import {
+  MdOutlineNotificationsActive,
+  MdLogout,
+  MdOutlineSettingsSuggest,
+} from "react-icons/md";
 import { CiCreditCard1 } from "react-icons/ci";
+import Link from "next/link";
 
 // Lazy-load components
 const Account = lazy(() => import("@/components/Dashboard/Items/Account"));
@@ -16,9 +21,16 @@ const Password = lazy(() => import("@/components/Dashboard/Items/Password"));
 const Notifications = lazy(
   () => import("@/components/Dashboard/Items/Notifications")
 );
-const Services = lazy(() => import("@/components/Dashboard/Items/Services"));
+const NewServices = lazy(
+  () => import("@/components/Dashboard/Items/NewServices")
+);
+const Services = lazy(
+  () => import("@/components/Dashboard/Items/Services")
+);
 const Billing = lazy(() => import("@/components/Dashboard/Items/Billing"));
-const UserProfile = lazy(() => import("@/components/Dashboard/Items/UserProfile"));
+const UserProfile = lazy(
+  () => import("@/components/Dashboard/Items/UserProfile")
+);
 
 // Define the available component keys as a union type
 type ComponentName =
@@ -26,6 +38,7 @@ type ComponentName =
   | "UserProfile"
   | "Password"
   | "Notifications"
+  | "NewServices"
   | "Services"
   | "Billing";
 
@@ -39,11 +52,12 @@ export default function Dash() {
     UserProfile: <UserProfile />,
     Password: <Password />,
     Notifications: <Notifications />,
+    NewServices: <NewServices />,
     Services: <Services />,
     Billing: <Billing />,
   };
 
- 
+  const [showSubMenu, setShowSubMenu] = useState(false);
 
   return (
     <div>
@@ -71,7 +85,8 @@ export default function Dash() {
 
             {/* FullName */}
             <h1 className="w-full text-left my-12 px-3 sm:px-0 sm:mx-4 xs:pl-4 text-teal-700 lg:text-4xl md:text-3xl sm:text-3xl xs:text-xl uppercase">
-              Sarah El Fassi
+              
+              <Link href={'/suppliers/profile'}>Sarah El Fassi</Link>
             </h1>
           </div>
         </div>
@@ -87,11 +102,9 @@ export default function Dash() {
             <div className="col-span-4 sm:col-span-3">
               {/* Info */}
               <div className="bg-white shadow rounded-lg p-6 ">
-              <div className="">
-                <h3 className="font-bold">Sarah El Fassi</h3>
-               
-              
-              </div>
+                <div className="">
+                  <h3 className="font-bold">Sarah El Fassi</h3>
+                </div>
                 <hr className="my-6 border-t border-gray-300" />
                 <div className="flex flex-col">
                   <span className="text-gray-700 uppercase font-bold tracking-wider mb-2">
@@ -121,11 +134,34 @@ export default function Dash() {
                         <RiLockPasswordLine className="text-pink-500" />{" "}
                         Password
                       </li>
+                  
+                      {/* Main Services Menu */}
                       <li
-                        className="inline-flex gap-2 items-center cursor-pointer mb-2 bg-slate-100 px-2 py-2 hover:bg-teal-100"
-                        onClick={() => setSelectedComponent("Services")}
+                        className="relative inline-flex gap-2 items-center cursor-pointer mb-2 bg-slate-100 px-2 py-2 hover:bg-teal-100"
+                        onMouseEnter={() => setShowSubMenu(true)}
+                        onMouseLeave={() => setShowSubMenu(false)}
                       >
-                        <GiBigDiamondRing className="text-pink-500" /> Services
+                        <GiBigDiamondRing className="text-pink-500" />
+                        Services
+                        {/* Sub-menu */}
+                        {showSubMenu && (
+                          <ul className="absolute left-10 top-0 ml-[-10px] bg-white border border-gray-300 shadow-lg rounded-md">
+                            <li
+                              className="px-4 py-2 w-[200px] hover:bg-teal-100 cursor-pointer"
+                              onClick={() =>
+                                setSelectedComponent("NewServices")
+                              }
+                            >
+                              New Services
+                            </li>
+                            <li
+                              className="px-4 py-2 hover:bg-teal-100 cursor-pointer"
+                              onClick={() => setSelectedComponent("Services")}
+                            >
+                              All Services
+                            </li>
+                          </ul>
+                        )}
                       </li>
                       <li
                         className="inline-flex gap-2 items-center cursor-pointer mb-2 bg-slate-100 px-2 py-2 hover:bg-teal-100"
