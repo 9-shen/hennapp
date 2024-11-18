@@ -134,7 +134,7 @@ export default function Profile() {
 
             {/* FullName */}
             <h1 className="w-full text-left my-12 px-3 sm:px-0 sm:mx-4 xs:pl-4 text-teal-700 lg:text-4xl md:text-3xl sm:text-3xl xs:text-xl uppercase">
-              Sarah El Fassi
+              <Link href={"/dashboard"}>Sarah El Fassi</Link>
             </h1>
           </div>
         </div>
