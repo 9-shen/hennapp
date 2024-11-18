@@ -12,7 +12,7 @@ export default function NotFound(){
       <p className="text-2xl font-medium mt-4">Oops! Page not found</p>
       <p className="mt-4 mb-8">The page you are looking for doesnt exist or has been moved.</p>
       <Link href="/"
-        className="px-6 py-3 bg-white font-bold font-semibold rounded-full hover:bg-purple-100 transition duration-300 ease-in-out dark:bg-gray-700 dark:hover:bg-gray-600 dark:text-white">
+        className="px-6 py-3 bg-white font-bold  rounded-full hover:bg-purple-100 transition duration-300 ease-in-out dark:bg-gray-700 dark:hover:bg-gray-600 dark:text-white">
         Go Back Home
       </Link>
     </div>

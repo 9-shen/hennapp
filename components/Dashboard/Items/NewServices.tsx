@@ -367,7 +367,7 @@ export default function Services() {
           <hr className="my-6 border-t border-gray-300" />
           <div>
           {previews.length > 0 && (
-            <div className="grid grid-cols-5 gap-2">
+            <div className="grid grid-cols-2 md:grid-cols-5 gap-2">
               {previews.map((preview, index) => (
                 <div key={index} className="relative w-40 h-24 overflow-hidden rounded-md border border-[#e0e0e0]">
                   <Image
