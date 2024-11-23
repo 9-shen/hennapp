@@ -74,6 +74,7 @@ export default function FooterMaster() {
               <Link href={"/blog"} className="font-Inter text-[14px] font-medium text-white">blog</Link>
               <Link href={"/contact"} className="font-Inter text-[14px] font-medium text-white">Contact</Link>
               <Link href={"/dashboard"} className="font-Inter text-[14px] font-medium text-white">Dashboard</Link>
+              <Link href={"/quiz"} className="font-Inter text-[14px] font-medium text-white">Quiz</Link>
             </div>
           </div>
         </div>

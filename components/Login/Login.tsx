@@ -5,6 +5,8 @@ import { FaFacebook } from "react-icons/fa";
 import { FaGoogle } from "react-icons/fa";
 
 export default function Login() {
+ 
+
   return (
     <div>
       <div className="min-h-screen bg-gray-100 text-gray-900 flex justify-center">
