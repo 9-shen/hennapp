@@ -9,7 +9,7 @@ import Link from "next/link";
 export default function Notifications() {
   return (
     <div className="overflow-x-auto scrollbar-smooth">
-      <h3 className="font-bold">Billing Details</h3>
+      <h3 className="font-bold">Notifications</h3>
       <hr className="my-6 border-t border-gray-300" />
       <table className="min-w-full divide-y divide-gray-200">
         <thead className="bg-gray-50">
